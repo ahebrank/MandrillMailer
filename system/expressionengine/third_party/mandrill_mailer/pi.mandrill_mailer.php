@@ -309,7 +309,7 @@ class Mandrill_mailer {
 		$form .= '>';
 
 		// Check for CSRF
-		if (ee()->config->item('disable_csrf_protection') === false) {
+		if (ee()->config->item('disable_csrf_protection') !== 'y') {
 			$form .= '<input type="hidden" name="';
 			$form .= ee()->security->get_csrf_token_name() . '" ';
 			$form .= 'value="' . ee()->security->get_csrf_hash() . '">';
